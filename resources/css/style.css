@@ -230,7 +230,7 @@ nav {
         padding: 0;
         margin: 0;
     }
-    .section-title, .blog-author, .course-detail p {
+    .section-title, .course-detail p {
         text-align: center;
     }
     .players, .blogs, .courses {
@@ -240,6 +240,10 @@ nav {
     .player, .blog {
         flex-direction: column;
         align-items: center;
+    }
+
+    .blog-info {
+        text-align: center;
     }
 
 }
