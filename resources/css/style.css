@@ -21,6 +21,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 .container {
     background-color: var(--container-background);
@@ -32,7 +33,10 @@ main {
 
 /* ===============Navbar Styles============ */
 header {
+    max-width: 100%;
     background-color: var(--secondary-background);
+    height: 94px;
+    display: flex;
 }
 nav {
     display: flex;
@@ -40,10 +44,37 @@ nav {
     width: 870px;
     margin: 0 auto;
 }
+.logo, .nav-links{
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
     width: 41px;
     height: 51px;
+    margin-right: 16px;
 }
+
+.logo span {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.nav-links img {
+    width: 51px;
+    height: 51px;
+}
+
+.nav-links a, .nav-links img{
+    margin-left: 36px;
+}
+
 
 /* ===========Top Players Style=========== */
 
@@ -149,6 +180,9 @@ nav {
 .fa-star.filled {
     color: #FFC014;
 }
+.fa-star-half-alt {
+    color: #FFC014;
+}
 
 .course-duration {
     margin-left: 10px;
@@ -162,4 +196,97 @@ nav {
 .fa-clock {
     font-size: 18px;
     margin-right: 5px;
+}
+
+
+/* ===========Media Query============ */
+
+@media screen and (max-width: 321px) {
+    .nav-links img {
+        display: none;
+    }
+
+    .blog-info {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  
+    nav {
+        justify-content: center;
+    }
+   
+    .logo img {
+        margin-right: 10px;
+    }
+
+    .nav-links a, .nav-links img {
+        margin-left: 5px;
+    }
+ 
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .section-title, .blog-author, .course-detail p {
+        text-align: center;
+    }
+    .players, .blogs, .courses {
+        grid-template-columns: 1fr;
+    }
+
+    .player, .blog {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+ 
+    body {
+        max-height: 100%;
+    }
+    nav {
+        justify-content: center;
+    }
+    .container {
+        max-width: 85%;
+        padding: 0 15px;
+        margin-top: 10px;
+    }
+    .section-title, .blog-author, .course-detail p {
+        text-align: center;
+    }
+
+    .players, .blogs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .player, .blog {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .courses {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 930px) {
+
+    nav {
+        margin: 0 40px;
+    }
+    .container {
+        max-width: 85%;
+        padding: 0 20px;
+        margin: 20px;
+    }
+
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
